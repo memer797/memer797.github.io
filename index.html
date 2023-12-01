@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login with Gmail</title>
+    <title>Website with Notifications</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,21 +15,17 @@
             height: 100vh;
         }
 
-        .login-container {
+        .container {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
-        }
-
-        .login-container h2 {
             text-align: center;
         }
 
-        .login-form {
-            display: flex;
-            flex-direction: column;
+        h2 {
+            margin-bottom: 20px;
         }
 
         .form-group {
@@ -64,30 +60,35 @@
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login with Gmail</h2>
-        <form class="login-form" id="loginForm">
-            <div class="form-group">
-                <label for="email">Email (Gmail):</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <button type="button" onclick="loginWithGmail()">Login with Gmail</button>
-            </div>
-        </form>
+    <div class="container">
+        <h2>Subscribe for Notifications</h2>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <button type="button" onclick="subscribe()">Subscribe</button>
+        </div>
     </div>
 
     <script>
-        function loginWithGmail() {
-            // In a real-world scenario, you would redirect to the OAuth authorization URL
-            // and handle the OAuth callback on the server-side.
-            alert('Redirect to Gmail OAuth Authorization URL');
+        function subscribe() {
+            var email = document.getElementById('email').value;
+            if (validateEmail(email)) {
+                alert('Subscription successful! You will receive notifications for new posts.');
+                // Here, you would typically send the email to the server for subscription handling.
+                // Simulating a server-side process for demonstration purposes.
+                console.log('Email subscribed:', email);
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+
+        function validateEmail(email) {
+            // Basic email validation
+            var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
         }
     </script>
 </body>
 </html>
-
