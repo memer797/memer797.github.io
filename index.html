@@ -3,82 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Movie Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            padding: 0;
+            background-color: #f4f4f4;
         }
 
-        .login-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-
-        .login-container h2 {
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
             text-align: center;
         }
 
-        .login-form {
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .movie-card {
             display: flex;
-            flex-direction: column;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            font-weight: bold;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        .form-group button {
-            background-color: #4285f4;
-            color: white;
+            margin-bottom: 20px;
             padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
 
-        .form-group button:hover {
-            background-color: #357ae8;
+        .movie-card img {
+            max-width: 120px;
+            border-radius: 4px;
+            margin-right: 20px;
+        }
+
+        .movie-details {
+            flex-grow: 1;
+        }
+
+        .movie-details h2 {
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form class="login-form">
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+    <header>
+        <h1>Movie Page</h1>
+    </header>
+
+    <main>
+        <div class="movie-card">
+            <img src="movie-poster.jpg" alt="Movie Poster">
+            <div class="movie-details">
+                <h2>Movie Title</h2>
+                <p>Release Date: January 1, 2023</p>
+                <p>Genre: Action, Adventure</p>
+                <p>Director: John Doe</p>
+                <p>Summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
             </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <button type="submit">Login</button>
-            </div>
-        </form>
-    </div>
+        </div>
+
+        <!-- Add more movie cards as needed -->
+
+    </main>
+
+    <footer>
+        &copy; 2023 Movie Page. All Rights Reserved.
+    </footer>
 </body>
 </html>
