@@ -3,119 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movieswhere</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
+      background-color: #f1f1f1;
     }
 
-    .header {
+    header {
       background-color: #333;
       color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+      color: #fff;
       padding: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      text-align: center;
     }
 
-    .logo {
-      flex: 1;
-    }
-
-    .search {
-      flex: 1;
-      text-align: right;
-      position: relative;
-    }
-
-    .search label {
-      display: none;
-    }
-
-    .search input[type="text"] {
-      padding: 8px 30px 8px 30px;
-      margin: 5px;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-      width: 0;
-      transition: width 0.5s ease-in-out;
-      box-sizing: border-box;
-      font-size: 16px;
-      background: #fff; /* Set background color */
-    }
-
-    .search:hover input[type="text"] {
-      width: 70%;
-    }
-
-    .search input[type="submit"] {
-      position: absolute;
-      right: 5px;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 8px;
-      border: none;
-      background-color: transparent;
-      cursor: pointer;
-    }
-
-    .search input[type="submit"]::before {
-      content: "\1F50D"; /* Unicode for lens emoji */
-      font-size: 20px;
-    }
-
-    .login {
-      flex: 1;
-      text-align: right;
-    }
-
-    /* Style the search and login links */
-    a {
+    nav a {
       text-decoration: none;
       color: #fff;
-      margin: 5px;
+      margin: 0 15px;
     }
 
-    /* Style the login link */
-    .login a {
-      color: #fff;
-      text-decoration: none;
-      padding: 8px;
-      margin: 5px;
-      border-radius: 3px;
-      cursor: pointer;
-      background-color: #4CAF50;
+    main {
+      padding: 20px;
+    }
+
+    /* Add your specific movie-related content styles here */
+    .movie {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 15px;
+      background-color: #fff;
     }
   </style>
 </head>
 <body>
 
-  <div class="header">
-    <div class="logo">
-      <!-- Your logo goes here -->
-      <img src="your-logo.png" alt="Logo">
+  <header>
+    <h1>Movieswhere</h1>
+    <p>Your go-to place for movies</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Movies</a>
+    <a href="#">TV Shows</a>
+    <a href="#">Genres</a>
+    <a href="#">Search</a>
+  </nav>
+
+  <main>
+    <!-- Example Movie Listing -->
+    <div class="movie">
+      <h2>Movie Title 1</h2>
+      <p>Release Year: 2022</p>
+      <p>Genre: Action, Drama</p>
+      <p>Director: John Doe</p>
+      <p>Rating: 8.5/10</p>
+      <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit....</p>
     </div>
 
-    <div class="search">
-      <form action="#" method="get">
-        <label for="search">Search</label>
-        <input type="text" id="search" name="search" placeholder="Type here...">
-        <input type="submit" value="">
-      </form>
+    <div class="movie">
+      <h2>Movie Title 2</h2>
+      <p>Release Year: 2021</p>
+      <p>Genre: Comedy</p>
+      <p>Director: Jane Doe</p>
+      <p>Rating: 7.8/10</p>
+      <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit....</p>
     </div>
-
-    <div class="login">
-      <!-- Your login link goes here -->
-      <a href="#">Login</a>
-    </div>
-  </div>
+    <!-- Add more movie listings as needed -->
+  </main>
 
   <!-- The rest of your website content goes here -->
 
-  <script>
-    // You can add additional JavaScript for further interactions or animations
-  </script>
 </body>
 </html>
