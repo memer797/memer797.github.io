@@ -104,7 +104,22 @@
     <!-- Add more movie containers as needed -->
 </div>
 
+<script>
+    // Initialize Slick slider
+    $(document).ready(function(){
+        $('#trending').slick({
+            infinite: true,
+            slidesToShow: 4, // Display 4 movies at a time
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000, // Adjust the speed as needed
+            pauseOnHover: true
+        });
+    });
+</script>
+
 <!-- ... (remaining code) ... -->
+
 
     
 </body>
