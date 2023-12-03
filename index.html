@@ -26,6 +26,30 @@
     .search {
       flex: 2;
       text-align: center;
+      position: relative;
+    }
+
+    .search input[type="text"] {
+      padding: 8px;
+      margin: 5px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      width: 70%;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .search:hover input[type="text"] {
+      opacity: 1;
+    }
+
+    .search input[type="submit"] {
+      padding: 8px;
+      margin: 5px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
     }
 
     .login {
@@ -34,18 +58,6 @@
     }
 
     /* Style the search and login links */
-    input[type="text"], input[type="submit"] {
-      padding: 8px;
-      margin: 5px;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-
-    input[type="text"] {
-      width: 70%;
-    }
-
     a {
       text-decoration: none;
       color: #fff;
