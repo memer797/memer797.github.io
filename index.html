@@ -28,6 +28,14 @@
             display: inline-block;
             margin: 10px;
             text-align: center;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .movie-container.active {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .movie-image {
@@ -69,13 +77,20 @@
 
     <script>
         // JavaScript for automatic scrolling
-        const trendingContainer = document.getElementById('trending');
+        const movieContainers = document.querySelectorAll('.movie-container');
+        const intervalDuration = 5000; // Time in milliseconds for each movie
 
-        function scrollTrendingMovies() {
-            trendingContainer.scrollLeft += 2; // Adjust the scrolling speed as needed
+        let currentIndex = 0;
+
+        function showNextMovie() {
+            movieContainers.forEach(container => container.classList.remove('active'));
+            movieContainers[currentIndex].classList.add('active');
+
+            currentIndex = (currentIndex + 1) % movieContainers.length;
         }
 
-        setInterval(scrollTrendingMovies, 30); // Adjust the interval as needed
+        setInterval(showNextMovie, intervalDuration);
+        showNextMovie(); // Initial display
     </script>
 </body>
 </html>
