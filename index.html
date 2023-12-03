@@ -3,79 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Website</title>
     <style>
-        .A10 {
-            background: -webkit-linear-gradient(top, #fcfeee 0%, #eeeeee 100%);
-            border-bottom: 1px solid #ccc;
-            font-weight: normal;
-            padding: 4px;
-            border-radius: 5px; /* Add this line for rounded corners */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
 
-        .A10 table {
-            width: 100%;
-        }
-
-        .A10 td {
-            width: 63px;
-        }
-
-        .A10 img {
-            width: 60px;
-            height: 65px;
-        }
-
-        .A10 td:first-child {
-            padding-right: 10px;
-        }
-
-        .A10 td:last-child {
-            width: 100%;
-            text-align: left;
-        }
-
-        .A10 a {
-            text-decoration: none;
-        }
-
-        .movie-title {
-            color: #B88A00;
-            font-size: 15px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .category-badge {
-            background: #088A29;
-            padding: 2px 6px;
-            font-size: 10px;
-            font-weight: bold;
+        #header {
+            background-color: #333;
             color: #fff;
-            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #trending {
+            overflow-x: scroll;
+            white-space: nowrap;
+            background-color: #f5f5f5;
+        }
+
+        .movie-container {
             display: inline-block;
-            margin-bottom: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .movie-image {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .movie-name {
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
+    <div id="header">
+        <h1>Top Trending Movies</h1>
+    </div>
 
-<div class="A10">
-    <table>
-        <tr>
-            <td>
-                <a href="/page-download/4099/Animal-V2-2023-Bollywood-Hindi-Full-Movie-HDTS.html">
-                    <img src="https://i1.iwebp.xyz/webp/120:130/100/CJEW4LsOK5M6HL9PrIokXnSk9LXFKi1itoX_p_lNgJuVaB9ZUaWUUDdrPwdvGMi5kgL0e_s_sK2Rl_p_if_s_4hV2onr7D6FCVmPfh3vkM_p_CeUA_p_JeSJZhCQZh_s_MGuPQ42cdYX1SmDno6w6vcXxxBxgDaRsA9R3J2hNDFIiQ4MVfLJ08oTBdfQI6P_p_MkDBR1mi7MRFO5OdQTBzjkG4d7eegf.webp" alt="Animal V2 Movie" />
-                </a>
-            </td>
-            <td>
-                <a href="/page-download/4099/Animal-V2-2023-Bollywood-Hindi-Full-Movie-HDTS.html">
-                    <div class="movie-title">Animal V2 (2023) Bollywood Hindi Full Movie HDTS</div>
-                </a>
-                <div class="category-badge">New Bollywood Movies 2023</div>
-            </td>
-        </tr>
-    </table>
-</div>
+    <div id="trending">
+        <!-- Add your trending movies here -->
+        <div class="movie-container">
+            <img class="movie-image" src="movie1.jpg" alt="Movie 1">
+            <div class="movie-name">Movie 1</div>
+        </div>
+        <div class="movie-container">
+            <img class="movie-image" src="movie2.jpg" alt="Movie 2">
+            <div class="movie-name">Movie 2</div>
+        </div>
+        <div class="movie-container">
+            <img class="movie-image" src="movie3.jpg" alt="Movie 3">
+            <div class="movie-name">Movie 3</div>
+        </div>
+        <div class="movie-container">
+            <img class="movie-image" src="movie4.jpg" alt="Movie 4">
+            <div class="movie-name">Movie 4</div>
+        </div>
+        <!-- Add more movie containers as needed -->
+    </div>
+
+    <!-- Add other sections of your website below -->
 
 </body>
 </html>
