@@ -43,8 +43,17 @@
     }
 
     /* Movie Category Styles */
+    .categories {
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+    }
+
     .category {
-      margin-bottom: 30px;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 20px;
+      width: 60%; /* Adjust the width based on your design */
     }
 
     .category h2 {
@@ -56,17 +65,22 @@
 
     .movie-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      flex-wrap: nowrap; /* Prevent wrapping to next line */
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
     }
 
     .movie {
       width: 30%;
-      margin-bottom: 20px;
+      margin-right: 20px;
       background-color: #333;
       border-radius: 10px;
       overflow: hidden;
       transition: transform 0.3s ease-in-out;
+    }
+
+    .movie:last-child {
+      margin-right: 0; /* Remove right margin for the last movie in the category */
     }
 
     .movie:hover {
@@ -121,84 +135,59 @@
   </nav>
 
   <main>
-    <div class="category">
-      <h2>Action Thriller Movies</h2>
-      <div class="movie-container">
-        <!-- Example Movie Listing -->
-        <div class="movie">
-          <img src="action_movie1.jpg" alt="Action Movie 1">
-          <div class="movie-info">
-            <h3>Action Movie 1</h3>
+    <div class="categories">
+      <div class="category">
+        <h2>Action Thriller Movies</h2>
+        <div class="movie-container">
+          <!-- Example Movie Listing -->
+          <div class="movie">
+            <img src="action_movie1.jpg" alt="Action Movie 1">
+            <div class="movie-info">
+              <h3>Action Movie 1</h3>
+              <p>Release Year: 2022</p>
+            </div>
           </div>
-        </div>
 
-        <div class="movie">
-          <img src="action_movie2.jpg" alt="Action Movie 2">
-          <div class="movie-info">
-            <h3>Action Movie 2</h3>
-            <p>Release Year: 2021</p>
+          <div class="movie">
+            <img src="action_movie2.jpg" alt="Action Movie 2">
+            <div class="movie-info">
+              <h3>Action Movie 2</h3>
+              <p>Release Year: 2021</p>
+            </div>
           </div>
-        </div>
 
-        <div class="movie">
-          <img src="action_movie1.jpg" alt="Action Movie 1">
-          <div class="movie-info">
-            <h3>Action Movie 1</h3>
-          </div>
+          <!-- Add more action thriller movie listings as needed -->
         </div>
-
-        <div class="movie">
-          <img src="action_movie1.jpg" alt="Action Movie 1">
-          <div class="movie-info">
-            <h3>Action Movie 1</h3>
-          </div>
-        </div>
-
-        <div class="movie">
-          <img src="action_movie1.jpg" alt="Action Movie 1">
-          <div class="movie-info">
-            <h3>Action Movie 1</h3>
-          </div>
-        </div>
-
-        <div class="movie">
-          <img src="action_movie1.jpg" alt="Action Movie 1">
-          <div class="movie-info">
-            <h3>Action Movie 1</h3>
-          </div>
-        </div>
-
-        <!-- Add more action thriller movie listings as needed -->
       </div>
-    </div>
 
-    <div class="category">
-      <h2>Horror Movies</h2>
-      <div class="movie-container">
-        <!-- Example Movie Listing -->
-        <div class="movie">
-          <img src="horror_movie1.jpg" alt="Horror Movie 1">
-          <div class="movie-info">
-            <h3>Horror Movie 1</h3>
-            <p>Release Year: 2022</p>
+      <div class="category">
+        <h2>Horror Movies</h2>
+        <div class="movie-container">
+          <!-- Example Movie Listing -->
+          <div class="movie">
+            <img src="horror_movie1.jpg" alt="Horror Movie 1">
+            <div class="movie-info">
+              <h3>Horror Movie 1</h3>
+              <p>Release Year: 2022</p>
+            </div>
           </div>
-        </div>
 
-        <div class="movie">
-          <img src="horror_movie2.jpg" alt="Horror Movie 2">
-          <div class="movie-info">
-            <h3>Horror Movie 2</h3>
-            <p>Release Year: 2021</p>
+          <div class="movie">
+            <img src="horror_movie2.jpg" alt="Horror Movie 2">
+            <div class="movie-info">
+              <h3>Horror Movie 2</h3>
+              <p>Release Year: 2021</p>
+            </div>
           </div>
-        </div>
 
-        <!-- Add more horror movie listings as needed -->
+          <!-- Add more horror movie listings as needed -->
+        </div>
       </div>
+
+      <!-- Repeat the structure for other categories -->
+      <!-- Comedy Movies, Action Movies, Animation Movies, etc. -->
+
     </div>
-
-    <!-- Repeat the structure for other categories -->
-    <!-- Comedy Movies, Action Movies, Animation Movies, etc. -->
-
   </main>
 
   <!-- The rest of your website content goes here -->
