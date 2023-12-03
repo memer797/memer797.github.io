@@ -29,8 +29,17 @@
       position: relative;
     }
 
+    .search label {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      color: #fff;
+      font-size: 16px;
+    }
+
     .search input[type="text"] {
-      padding: 8px 30px 8px 8px;
+      padding: 8px 30px 8px 30px;
       margin: 5px;
       border: none;
       border-radius: 3px;
@@ -38,6 +47,7 @@
       width: 0;
       transition: width 0.5s ease-in-out;
       box-sizing: border-box;
+      font-size: 16px;
     }
 
     .search:hover input[type="text"] {
@@ -94,7 +104,8 @@
 
     <div class="search">
       <form action="#" method="get">
-        <input type="text" name="search" placeholder="&#128269; Search...">
+        <label for="search">Search</label>
+        <input type="text" id="search" name="search" placeholder="Type here...">
         <input type="submit" value="">
       </form>
     </div>
