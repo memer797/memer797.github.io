@@ -1,129 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #111;
-            color: #fff;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
 
-        .container {
-            width: 80%;
-            margin: 20px auto;
-        }
+    .header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .section {
-            margin-bottom: 20px;
-        }
+    .logo {
+      flex: 1;
+    }
 
-        .section-title {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #f39c12;
-        }
+    .search {
+      flex: 2;
+      text-align: center;
+    }
 
-        .movies-list {
-            display: flex;
-            overflow-x: auto;
-        }
+    .login {
+      flex: 1;
+      text-align: right;
+    }
 
-        .movie-card {
-            width: 150px;
-            margin-right: 15px;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
-        }
+    /* Style the search and login links */
+    input[type="text"], input[type="submit"] {
+      padding: 8px;
+      margin: 5px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
 
-        .movie-card:hover {
-            transform: scale(1.05);
-        }
+    input[type="text"] {
+      width: 70%;
+    }
 
-        .movie-image {
-            width: 100%;
-            height: 225px;
-            object-fit: cover;
-            border-radius: 10px 10px 0 0;
-        }
+    a {
+      text-decoration: none;
+      color: #fff;
+      margin: 5px;
+    }
 
-        .movie-title {
-            font-size: 14px;
-            margin-top: 10px;
-            padding: 10px;
-            background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
-            border-radius: 0 0 10px 10px;
-            text-align: center;
-            color: #ecf0f1;
-        }
-    </style>
+    /* Style the login link */
+    .login a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px;
+      margin: 5px;
+      border-radius: 3px;
+      cursor: pointer;
+      background-color: #4CAF50;
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="section">
-        <div class="section-title">Popular Movies</div>
-        <div class="movies-list">
-            <!-- Movie Cards go here -->
-            <div class="movie-card">
-                <img class="movie-image" src="movie1.jpg" alt="Movie 1">
-                <div class="movie-title">Movie 1</div>
-            </div>
-            <div class="movie-card">
-                <img class="movie-image" src="movie2.jpg" alt="Movie 2">
-                <div class="movie-title">Movie 2</div>
-            </div>
-            <div class="movie-card">
-                <img class="movie-image" src="movie3.jpg" alt="Movie 3">
-                <div class="movie-title">Movie 3</div>
-            </div>
-            <div class="movie-card">
-                <img class="movie-image" src="movie1.jpg" alt="Movie 1">
-                <div class="movie-title">Movie 1</div>
-            </div>
-            <div class="movie-card">
-                <img class="movie-image" src="movie1.jpg" alt="Movie 1">
-                <div class="movie-title">Movie 1</div>
-            </div>
-            <div class="movie-card">
-                <img class="movie-image" src="movie1.jpg" alt="Movie 1">
-                <div class="movie-title">Movie 1</div>
-            </div>
-            <div class="movie-card">
-                <img class="movie-image" src="movie1.jpg" alt="Movie 1">
-                <div class="movie-title">Movie 1</div>
-            </div>
-            <!-- Repeat similar structure for other movies -->
-        </div>
+  <div class="header">
+    <div class="logo">
+      <!-- Your logo goes here -->
+      <img src="your-logo.png" alt="Logo">
     </div>
 
-    <div class="section">
-        <div class="section-title">Action Movies</div>
-        <div class="movies-list">
-            <!-- Movie Cards go here -->
-            <div class="movie-card">
-                <img class="movie-image" src="action_movie1.jpg" alt="Action Movie 1">
-                <div class="movie-title">Action Movie 1</div>
-            </div>
-            <div class="movie-card">
-                <img class="movie-image" src="action_movie2.jpg" alt="Action Movie 2">
-                <div class="movie-title">Action Movie 2</div>
-            </div>
-            <div class="movie-card">
-                <img class="movie-image" src="action_movie3.jpg" alt="Action Movie 3">
-                <div class="movie-title">Action Movie 3</div>
-            </div>
-            <!-- Repeat similar structure for other action movies -->
-        </div>
+    <div class="search">
+      <form action="#" method="get">
+        <input type="text" name="search" placeholder="Search...">
+        <input type="submit" value="Search">
+      </form>
     </div>
 
-    <!-- Add more sections and movie cards as needed -->
+    <div class="login">
+      <!-- Your login link goes here -->
+      <a href="#">Login</a>
+    </div>
+  </div>
 
-</div>
+  <!-- The rest of your website content goes here -->
 
 </body>
 </html>
