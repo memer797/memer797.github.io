@@ -24,8 +24,8 @@
     }
 
     .search {
-      flex: 2;
-      text-align: center;
+      flex: 1;
+      text-align: right;
       position: relative;
     }
 
@@ -55,10 +55,9 @@
       cursor: pointer;
     }
 
-    .search input[type="submit"] img {
-      width: 20px;
-      height: 20px;
-      fill: #fff;
+    .search input[type="submit"]::before {
+      content: "\1F50D"; /* Unicode for lens emoji */
+      font-size: 20px;
     }
 
     .login {
@@ -95,10 +94,8 @@
 
     <div class="search">
       <form action="#" method="get">
-        <input type="text" name="search" placeholder="Search...">
-        <input type="submit" value="Search">
-        <!-- Alternatively, you can use an SVG search icon -->
-        <!-- <input type="submit" value="Search" class="search-icon"> -->
+        <input type="text" name="search" placeholder="&#128269; Search...">
+        <input type="submit" value="">
       </form>
     </div>
 
