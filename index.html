@@ -81,10 +81,10 @@
                 pauseOnHover: true
             });
         });
-    </script>
 <!-- ... (previous code) ... -->
 
 <div id="trending">
+    <!-- First line -->
     <div class="movie-container">
         <img class="movie-image" src="https://via.placeholder.com/200x300" alt="Movie 1">
         <div class="movie-name">Movie 1</div>
@@ -101,7 +101,27 @@
         <img class="movie-image" src="https://via.placeholder.com/200x300" alt="Movie 4">
         <div class="movie-name">Movie 4</div>
     </div>
-    <!-- Add more movie containers as needed -->
+
+    <!-- Add more lines as needed -->
+    <!-- Second line -->
+    <div class="movie-container">
+        <img class="movie-image" src="https://via.placeholder.com/200x300" alt="Movie 5">
+        <div class="movie-name">Movie 5</div>
+    </div>
+    <div class="movie-container">
+        <img class="movie-image" src="https://via.placeholder.com/200x300" alt="Movie 6">
+        <div class="movie-name">Movie 6</div>
+    </div>
+    <div class="movie-container">
+        <img class="movie-image" src="https://via.placeholder.com/200x300" alt="Movie 7">
+        <div class="movie-name">Movie 7</div>
+    </div>
+    <div class="movie-container">
+        <img class="movie-image" src="https://via.placeholder.com/200x300" alt="Movie 8">
+        <div class="movie-name">Movie 8</div>
+    </div>
+
+    <!-- Add more lines as needed -->
 </div>
 
 <script>
@@ -110,7 +130,7 @@
         $('#trending').slick({
             infinite: true,
             slidesToShow: 4, // Display 4 movies at a time
-            slidesToScroll: 1,
+            slidesToScroll: 4, // Scroll 4 movies at a time
             autoplay: true,
             autoplaySpeed: 2000, // Adjust the speed as needed
             pauseOnHover: true
