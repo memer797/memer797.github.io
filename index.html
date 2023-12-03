@@ -30,13 +30,14 @@
     }
 
     .search input[type="text"] {
-      padding: 8px;
+      padding: 8px 30px 8px 8px;
       margin: 5px;
       border: none;
       border-radius: 3px;
       cursor: pointer;
       width: 0;
       transition: width 0.5s ease-in-out;
+      box-sizing: border-box;
     }
 
     .search:hover input[type="text"] {
@@ -44,11 +45,20 @@
     }
 
     .search input[type="submit"] {
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
       padding: 8px;
-      margin: 5px;
       border: none;
-      border-radius: 3px;
+      background-color: transparent;
       cursor: pointer;
+    }
+
+    .search input[type="submit"] img {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
     }
 
     .login {
@@ -87,6 +97,8 @@
       <form action="#" method="get">
         <input type="text" name="search" placeholder="Search...">
         <input type="submit" value="Search">
+        <!-- Alternatively, you can use an SVG search icon -->
+        <!-- <input type="submit" value="Search" class="search-icon"> -->
       </form>
     </div>
 
