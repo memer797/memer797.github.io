@@ -84,63 +84,134 @@
     </script>
     
     
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Website</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #trending {
+            background-color: #f5f5f5;
+        }
+
+        .movie-container {
+            margin: 10px;
+            text-align: center;
+        }
+
+        .movie-image {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .movie-name {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Top Trending Movies</h1>
+    </div>
+
+    <div id="trending">
+        <div class="movie-container">
+            <img class="movie-image" src="movie1.jpg" alt="Movie 1">
+            <div class="movie-name">Movie 1</div>
+        </div>
+        <div class="movie-container">
+            <img class="movie-image" src="movie2.jpg" alt="Movie 2">
+            <div class="movie-name">Movie 2</div>
+        </div>
+        <div class="movie-container">
+            <img class="movie-image" src="movie3.jpg" alt="Movie 3">
+            <div class="movie-name">Movie 3</div>
+        </div>
+        <div class="movie-container">
+            <img class="movie-image" src="movie4.jpg" alt="Movie 4">
+            <div class="movie-name">Movie 4</div>
+        </div>
+        <!-- Add more movie containers as needed -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        // Initialize Slick slider
+        $(document).ready(function(){
+            $('#trending').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000, // Adjust the speed as needed
+                pauseOnHover: true
+            });
+        });
+    </script>
+    
+    
 <!-- ... (previous code) ... -->
 
-<div id="trending">
-    <div class="movie-container">
-        <img class="movie-image" src="https://via.placeholder.com/200x300" alt="Movie 1">
-        <div class="movie-name">Movie 1</div>
+<div id="trending" class="glide">
+    <div class="glide__track" data-glide-el="track">
+        <div class="movie-container">
+            <img class="movie-image" src="https://via.placeholder.com/200x300" alt="Movie 1">
+            <div class="movie-name">Movie 1</div>
+        </div>
+        <div class="movie-container">
+            <img class="movie-image" src="https://via.placeholder.com/200x300" alt="Movie 2">
+            <div class="movie-name">Movie 2</div>
+        </div>
+        <div class="movie-container">
+            <img class="movie-image" src="https://via.placeholder.com/200x300" alt="Movie 2">
+            <div class="movie-name">Movie 2</div>
+        </div>
+        <div class="movie-container">
+            <img class="movie-image" src="https://via.placeholder.com/200x300" alt="Movie 2">
+            <div class="movie-name">Movie 2</div>
+        </div>
+        <!-- Add more movie containers as needed -->
     </div>
-    <div class="movie-container">
-        <img class="movie-image" src="https://via.placeholder.com/200x300" alt="Movie 2">
-        <div class="movie-name">Movie 2</div>
-    </div>
-    <div class="movie-container">
-        <img class="movie-image" src="https://via.placeholder.com/200x300" alt="Movie 3">
-        <div class="movie-name">Movie 3</div>
-    </div>
-    <div class="movie-container">
-        <img class="movie-image" src="https://via.placeholder.com/200x300" alt="Movie 4">
-        <div class="movie-name">Movie 4</div>
-    </div>
-
-    <!-- Add more movie containers as needed -->
-
-    <div class="movie-container">
-        <img class="movie-image" src="https://via.placeholder.com/200x300" alt="Movie 5">
-        <div class="movie-name">Movie 5</div>
-    </div>
-    <div class="movie-container">
-        <img class="movie-image" src="https://via.placeholder.com/200x300" alt="Movie 6">
-        <div class="movie-name">Movie 6</div>
-    </div>
-    <div class="movie-container">
-        <img class="movie-image" src="https://via.placeholder.com/200x300" alt="Movie 7">
-        <div class="movie-name">Movie 7</div>
-    </div>
-    <div class="movie-container">
-        <img class="movie-image" src="https://via.placeholder.com/200x300" alt="Movie 8">
-        <div class="movie-name">Movie 8</div>
-    </div>
-
-    <!-- Add more movie containers as needed -->
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 <script>
-    // Initialize Slick slider
-    $(document).ready(function(){
-        $('#trending').slick({
-            infinite: true,
-            slidesToShow: 1, // Display 1 movie at a time
-            slidesToScroll: 1, // Scroll 1 movie at a time
-            autoplay: true,
-            autoplaySpeed: 2000, // Adjust the speed as needed
-            pauseOnHover: true
-        });
-    });
+    new Glide('.glide', {
+        type: 'carousel',
+        startAt: 0,
+        perView: 4, // Show 4 movies at a time
+        autoplay: 2000, // Adjust the speed as needed
+        hoverpause: true
+    }).mount();
 </script>
 
 <!-- ... (remaining code) ... -->
+
+    
+    
+</body>
+</html>
+
 
     
     
