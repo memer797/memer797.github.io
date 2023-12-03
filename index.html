@@ -9,19 +9,25 @@
       margin: 0;
       padding: 0;
       font-family: 'Arial', sans-serif;
-      background-color: #f1f1f1;
+      background-color: #111;
+      color: #fff;
     }
 
     header {
-      background-color: #333;
-      color: #fff;
+      background-color: #111;
       padding: 15px;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header img {
+      width: 100px;
+      height: auto;
     }
 
     nav {
-      background-color: #444;
-      color: #fff;
+      background-color: #222;
       padding: 10px;
       text-align: center;
     }
@@ -36,21 +42,63 @@
       padding: 20px;
     }
 
-    /* Add your specific movie-related content styles here */
+    /* Example Movie Listing Styles */
+    .movie-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
     .movie {
-      border: 1px solid #ddd;
-      border-radius: 5px;
+      width: 30%;
+      margin-bottom: 20px;
+      background-color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .movie:hover {
+      transform: scale(1.05);
+    }
+
+    .movie img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .movie-info {
       padding: 15px;
-      margin-bottom: 15px;
-      background-color: #fff;
+    }
+
+    .movie h3 {
+      margin: 0;
+    }
+
+    /* Login Styles */
+    .login-container {
+      text-align: right;
+    }
+
+    .login-button {
+      background-color: #e50914;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Movieswhere</h1>
-    <p>Your go-to place for movies</p>
+    <img src="your-logo.png" alt="Movieswhere Logo">
+    <div class="login-container">
+      <button class="login-button">Login</button>
+    </div>
   </header>
 
   <nav>
@@ -62,25 +110,27 @@
   </nav>
 
   <main>
-    <!-- Example Movie Listing -->
-    <div class="movie">
-      <h2>Movie Title 1</h2>
-      <p>Release Year: 2022</p>
-      <p>Genre: Action, Drama</p>
-      <p>Director: John Doe</p>
-      <p>Rating: 8.5/10</p>
-      <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit....</p>
-    </div>
+    <h1>Featured Movies</h1>
+    <div class="movie-container">
+      <!-- Example Movie Listing -->
+      <div class="movie">
+        <img src="movie1.jpg" alt="Movie 1">
+        <div class="movie-info">
+          <h3>Movie Title 1</h3>
+          <p>Release Year: 2022</p>
+        </div>
+      </div>
 
-    <div class="movie">
-      <h2>Movie Title 2</h2>
-      <p>Release Year: 2021</p>
-      <p>Genre: Comedy</p>
-      <p>Director: Jane Doe</p>
-      <p>Rating: 7.8/10</p>
-      <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit....</p>
+      <div class="movie">
+        <img src="movie2.jpg" alt="Movie 2">
+        <div class="movie-info">
+          <h3>Movie Title 2</h3>
+          <p>Release Year: 2021</p>
+        </div>
+      </div>
+
+      <!-- Add more movie listings as needed -->
     </div>
-    <!-- Add more movie listings as needed -->
   </main>
 
   <!-- The rest of your website content goes here -->
