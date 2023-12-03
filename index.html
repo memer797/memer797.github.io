@@ -19,7 +19,7 @@
         }
 
         #trending {
-            overflow-x: scroll;
+            overflow: hidden;
             white-space: nowrap;
             background-color: #f5f5f5;
         }
@@ -48,7 +48,6 @@
     </div>
 
     <div id="trending">
-        <!-- Add your trending movies here -->
         <div class="movie-container">
             <img class="movie-image" src="movie1.jpg" alt="Movie 1">
             <div class="movie-name">Movie 1</div>
@@ -68,7 +67,15 @@
         <!-- Add more movie containers as needed -->
     </div>
 
-    <!-- Add other sections of your website below -->
+    <script>
+        // JavaScript for automatic scrolling
+        const trendingContainer = document.getElementById('trending');
 
+        function scrollTrendingMovies() {
+            trendingContainer.scrollLeft += 2; // Adjust the scrolling speed as needed
+        }
+
+        setInterval(scrollTrendingMovies, 30); // Adjust the interval as needed
+    </script>
 </body>
 </html>
