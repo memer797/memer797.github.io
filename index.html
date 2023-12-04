@@ -39,34 +39,56 @@
     }
 
     main {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #111;
       padding: 20px;
     }
 
-    .row {
-      margin-bottom: 20px;
-    }
-
-    .row h2 {
-      margin-bottom: 10px;
-    }
-
-    .row_posters {
+    /* Example Movie Listing Styles */
+    .movie-container {
       display: flex;
-      overflow-x: auto;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
 
-    .row_poster {
-      width: 100px;
-      object-fit: contain;
-      max-height: 100px;
-      margin-right: 10px;
-      transition: transform 450ms;
+    .movie {
+      width: 30%;
+      margin-bottom: 20px;
+      background-color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
     }
 
-    .row_poster:hover {
-      transform: scale(1.08);
+    .movie:hover {
+      transform: scale(1.05);
+    }
+
+    .movie img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .movie-info {
+      padding: 15px;
+    }
+
+    .movie h3 {
+      margin: 0;
+    }
+
+    /* Login Styles */
+    .login-container {
+      text-align: right;
+    }
+
+    .login-button {
+      background-color: #e50914;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
     }
   </style>
 </head>
@@ -88,36 +110,46 @@
   </nav>
 
   <main>
-    <!-- Netflix Orginals -->
-    <div class="row">
-      <h2>memer797</h2>
-      <div class="row_posters">
-        <img src="example.com/your-logo.png" alt="" class="row_poster" />
-        <img src="images/large-movie2.jpg" alt="" class="row_poster" />
-        <img src="images/large-movie3.jpg" alt="" class="row_poster" />
-        <img src="images/large-movie4.jpg" alt="" class="row_poster" />
-        <img src="images/large-movie5.jpg" alt="" class="row_poster" />
-        <img src="images/large-movie6.jpg" alt="" class="row_poster" />
-        <img src="images/large-movie7.jpg" alt="" class="row_poster" />
-        <img src="images/large-movie8.jpg" alt="" class="row_poster" />
+    <h1>Featured Movies</h1>
+    <div class="movie-container">
+      <!-- Example Movie Listing -->
+      <div class="movie">
+        <img src="movie1.jpg" alt="Movie 1">
+        <div class="movie-info">
+          <h3>Movie Title 1</h3>
+          <p>Release Year: 2022</p>
+        </div>
       </div>
-    </div>
 
-    <!-- Trending Now -->
-    <div class="row">
-      <h2>Trending Now</h2>
-      <div class="row_posters">
-        <img src="images/small-movie1.jpg" alt="" class="row_poster" />
-        <img src="images/small-movie2.jpg" alt="" class="row_poster" />
-        <img src="images/small-movie3.jpg" alt="" class="row_poster" />
-        <img src="images/small-movie4.jpg" alt="" class="row_poster" />
-        <img src="images/small-movie5.jpg" alt="" class="row_poster" />
-        <img src="images/small-movie6.jpg" alt="" class="row_poster" />
-        <img src="images/small-movie7.jpg" alt="" class="row_poster" />
-        <img src="images/small-movie8.jpg" alt="" class="row_poster" />
+      <div class="movie">
+        <img src="movie2.jpg" alt="Movie 2">
+        <div class="movie-info">
+          <h3>Movie Title 2</h3>
+          <p>Release Year: 2021</p>
+        </div>
       </div>
+
+      <div class="movie">
+        <img src="movie2.jpg" alt="Movie 2">
+        <div class="movie-info">
+          <h3>Movie Title 2</h3>
+          <p>Release Year: 2021</p>
+        </div>
+      </div>
+
+      <div class="movie">
+        <img src="movie2.jpg" alt="Movie 2">
+        <div class="movie-info">
+          <h3>Movie Title 2</h3>
+          <p>Release Year: 2021</p>
+        </div>
+      </div>
+
+      <!-- Add more movie listings as needed -->
     </div>
   </main>
+
+  <!-- The rest of your website content goes here -->
 
 </body>
 </html>
