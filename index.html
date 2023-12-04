@@ -38,37 +38,35 @@
       margin: 0 15px;
     }
 
-main{
-          font-family: Arial, Helvetica, sans-serif;
-           background-color: #111;
-        }
-
-. row_posters {
-         width: 100%;
-         object-fit: contain;
-         max-height: 100px;
-         margin-right: 10px;
-         transition: trasform 450ms;
-         }
-
-
-
-
-
-
-    /* Login Styles */
-    .login-container {
-      text-align: right;
+    main {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #111;
+      padding: 20px;
     }
 
-    .login-button {
-      background-color: #e50914;
-      color: #fff;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
+    .row {
+      margin-bottom: 20px;
+    }
+
+    .row h2 {
+      margin-bottom: 10px;
+    }
+
+    .row_posters {
+      display: flex;
+      overflow-x: auto;
+    }
+
+    .row_poster {
+      width: 100px;
+      object-fit: contain;
+      max-height: 100px;
+      margin-right: 10px;
+      transition: transform 450ms;
+    }
+
+    .row_poster:hover {
+      transform: scale(1.08);
     }
   </style>
 </head>
@@ -89,40 +87,37 @@ main{
     <a href="#">Search</a>
   </nav>
 
-<main>
-<!-- Netflix Orginals -->
-<div class="row">
-<h2>memer797</h2>
-<div class="row_posters">
-       <img src="prize-pulse.github.io/favicon.ico" alt="" class="row_poster row posterLarge" />
-      <img src="images/large-movie2.jpg" alt="" class="row poster row posterLarge" />
-     <img src="images/large-movie3.jpg" alt="" class="row_poster row posterLarge" />
-     <img src="images/large-movie3.jpg" alt="" class="row poster row posterLarge" />
-     <img src="images/large-movie5.jpg" alt="" class="row poster row posterLarge" />
-    <img src="images/large-movie6.jpg" alt="" class="row poster row posterLarge" />
-     <img src="images/large-movie7.jpg" alt="" class="row_poster row posterlarge" />
-     <img src="images/large-movie8.jpg" alt="" class="row poster row posterLarge" />
-
+  <main>
+    <!-- Netflix Orginals -->
+    <div class="row">
+      <h2>memer797</h2>
+      <div class="row_posters">
+        <img src="images/large-movie1.jpg" alt="" class="row_poster" />
+        <img src="images/large-movie2.jpg" alt="" class="row_poster" />
+        <img src="images/large-movie3.jpg" alt="" class="row_poster" />
+        <img src="images/large-movie4.jpg" alt="" class="row_poster" />
+        <img src="images/large-movie5.jpg" alt="" class="row_poster" />
+        <img src="images/large-movie6.jpg" alt="" class="row_poster" />
+        <img src="images/large-movie7.jpg" alt="" class="row_poster" />
+        <img src="images/large-movie8.jpg" alt="" class="row_poster" />
       </div>
+    </div>
+
+    <!-- Trending Now -->
+    <div class="row">
+      <h2>Trending Now</h2>
+      <div class="row_posters">
+        <img src="images/small-movie1.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie2.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie3.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie4.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie5.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie6.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie7.jpg" alt="" class="row_poster" />
+        <img src="images/small-movie8.jpg" alt="" class="row_poster" />
       </div>
-
-<!-- Trending Now -->
-<div class="row">
-<h2>Trending Now</h2>
-<div class="row_posters">
-        <img src="images/small-movie1.jpg" alt="" class="row poster" /> 
-       <img src="images/small-moviel.jpg" alt="" class="row_poster"/>
-         <img src="images/farge-movie3.jpg" alt="" class="row_poster" />
-        <img src="images/large-movie3.jpg" alt="" class="row poster" />
-       <img src="images/large-movie5.jpg" alt="" class="row poster" />
-       <img src="images/large-movie6.jpg" alt="" class="row_poster" />
-       <img src="images/large-movie7.jpg" alt="" class="row poster" /> 
-      <img src="images/large-movie8.jpg" alt="" class="row poster" />
-
-        </div>
-</div>
-            
-                 </main>
+    </div>
+  </main>
 
 </body>
 </html>
