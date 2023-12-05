@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movieswhere</title>
+  
+  <title>Movie Website</title>
+  
   <style>
     body {
       margin: 0;
@@ -13,67 +15,43 @@
       color: #fff;
     }
 
-    header {
-      background-color: #111;
-      padding: 15px;
+    main {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color:#111;
+      padding: 20px;
+    }
+
+    /* Social Icons */
+    .social-icons {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
     }
 
-    header img {
-      width: 100px;
-      height: auto;
-    }
-
-    nav {
-      background-color: #222;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
+    .social-icon {
+      margin: 0 10px;
+      font-size: 24px;
+      color: #fff;
       text-decoration: none;
-      color: #fff;
-      margin: 0 15px;
+      transition: color 0.3s ease;
     }
 
-
-
-    /* Login Styles */
-    .login-container {
-      text-align: right;
-    }
-
-    .login-button {
-      background-color: #e50914;
-      color: #fff;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
+    .social-icon:hover {
+      color: #e50914; /* Change color on hover */
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="your-logo.png" alt="Movieswhere Logo">
-    <div class="login-container">
-      <button class="login-button">Login</button>
+  <main>
+    <!-- Social Icons -->
+    <div class="social-icons">
+      <a href="https://www.facebook.com/" class="social-icon" target="_blank">FB</a>
+      <a href="https://www.instagram.com/" class="social-icon" target="_blank">Insta</a>
+      <a href="https://wa.me/1234567890" class="social-icon" target="_blank">WhatsApp</a>
+      <a href="https://t.me/" class="social-icon" target="_blank">Telegram</a>
     </div>
-  </header>
+  </main>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Movies</a>
-    <a href="#">TV Shows</a>
-    <a href="#">Genres</a>
-    <a href="#">Search</a>
-  </nav>
-
-  
- 
 </body>
 </html>
