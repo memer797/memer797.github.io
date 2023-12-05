@@ -1,41 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Movie Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Website</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-  
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #111;
-      color: #fff;
-    }
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
-    header {
-      background-color: #111;
-      padding: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        #header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
 
-    header img {
-      width: 100px;
-      height: auto;
-    }
+        #trending {
+            background-color: #f5f5f5;
+        }
 
-
-
-
-
-
-      .movie-container {
+        .movie-container {
             margin: 10px;
             text-align: center;
         }
@@ -50,120 +39,30 @@
         .movie-name {
             margin-top: 5px;
         }
-
-
-
-
-
-
-
-
-
-    nav {
-      background-color: #222;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #fff;
-      margin: 0 15px;
-    }
-
-    main {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color:#111;
-	    }
-
- . row_poster{
- 		width: 100%;
- 		object-file: contain;
- 		max-height: 100px;
- 		margin-right: 10px;
- 		transition: transform 450ms;
- }
- 
- .row_posters{
-		display: flex;
-		overflow-y: hidden;
-		overflow-x: scroll;
-		padding: 20px;
-}
-
-.row_poster:hover {
-      transform: scale(1.08);
-    }
-    
-   .row_poters::-webkit-scrollbar{
-   	display: none;
-   }
-   
-   .row{
-   	color: white;
- 	  margin-left:0px;
- }
-
-    /* Login Styles */
-    .login-container {
-      text-align: right;
-    }
-
-    .login-button {
-      background-color: #e50914;
-      color: #fff;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-  </style>
+    </style>
 </head>
 <body>
-
-  <header>
-    <img src="your-logo.png" alt="Movieswhere Logo">
-    <div class="login-container">
-      <button class="login-button">Login</button>
+    <div id="header">
+        <h1>Top Trending Movies</h1>
     </div>
-  </header>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Movies</a>
-    <a href="#">TV Shows</a>
-    <a href="#">Genres</a>
-    <a href="#">Search</a>
-  </nav>
-
-
-
-
- <div id="trend">
+    <div id="trending">
         <div class="movie-container">
-            <img class="movie-image" src="https://via.placeholder.com/200x300" alt="">  <div class="movie-name">Movie 1</div>
-       <div class="movie-container">
-            <img class="movie-image" src="https://via.placeholder.com/200x300" alt="">  <div class="movie-name">Movie 1</div>
-       <div class="movie-container">
-            <img class="movie-image" src="https://via.placeholder.com/200x300" alt="">  <div class="movie-name">Movie 1</div>
-       <div class="movie-container">
-            <img class="movie-image" src="https://via.placeholder.com/200x300" alt="">  <div class="movie-name">Movie 1</div>
-       <div class="movie-container">
-            <img class="movie-image" src="https://via.placeholder.com/200x300" alt="">  <div class="movie-name">Movie 1</div>
-       
-        
+            <img class="movie-image" src="movie1.jpg" alt="Movie 1">
+            <div class="movie-name">Movie 1</div>
+        </div>
+        <div class="movie-container">
+            <img class="movie-image" src="movie2.jpg" alt="Movie 2">
+            <div class="movie-name">Movie 2</div>
+        </div>
+        <div class="movie-container">
+            <img class="movie-image" src="movie3.jpg" alt="Movie 3">
+            <div class="movie-name">Movie 3</div>
+        </div>
+        <div class="movie-container">
+            <img class="movie-image" src="movie4.jpg" alt="Movie 4">
+            <div class="movie-name">Movie 4</div>
+        </div>
         <!-- Add more movie containers as needed -->
     </div>
 
@@ -183,31 +82,5 @@
             });
         });
     </script>
-
-
-
-
-
-
-  <main>
-
-  <!-- Trending Now -->
-<div class="row">
-<h2>Trending Now</h2>
-<div class="row_posters">
-<img src="https://via.placeholder.com/200x300" alt="" class="row_poster" />
-<img src="https://via.placeholder.com/200x300" alt="" class="row_poster" />
-<img src="https://via.placeholder.com/200x300" alt="" class="row_poster" />
-<img src="https://via.placeholder.com/200x300" alt="" class="row_poster" />
-<img src="https://via.placeholder.com/200x300" alt="" class="row_poster" />
-<img src="https://via.placeholder.com/200x300" alt="" class="row_poster" />
-<img src="https://via.placeholder.com/200x300" alt="" class="row_poster" />
-<img src="https://via.placeholder.com/200x300" alt="" class="row_poster" />
-<img src="https://via.placeholder.com/200x300" alt="" class="row_poster" />
-<img src="https://via.placeholder.com/200x300" alt="" class="row_poster" />
-</div>
-</div>
-
-      </main>
-  </body>
-    </html>
+</body>
+</html>
