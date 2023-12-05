@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Movie Website</title>
-  
+  <title>Movieswhere</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
   <style>
     body {
       margin: 0;
@@ -13,6 +14,31 @@
       font-family: 'Arial', sans-serif;
       background-color: #111;
       color: #fff;
+    }
+
+    header {
+      background-color: #111;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header img {
+      width: 100px;
+      height: auto;
+    }
+
+    nav {
+      background-color: #222;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      margin: 0 15px;
     }
 
     main {
@@ -45,9 +71,59 @@
       margin-top: 5px;
       font-size: 14px;
     }
+
+    /* Social Icons */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .social-icon {
+      margin: 0 15px;
+      font-size: 24px;
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .social-icon:hover {
+      color: #e50914; /* Change color on hover */
+    }
+
+    /* Bottom Section */
+    .bottom-section {
+      text-align: center;
+      padding: 20px;
+      background-color: #222;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .bottom-text {
+      margin: 0;
+      font-size: 14px;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
+
+  <header>
+    <img src="your-logo.png" alt="Movieswhere Logo">
+    <div class="login-container">
+      <button class="login-button">Login</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Movies</a>
+    <a href="#">TV Shows</a>
+    <a href="#">Genres</a>
+    <a href="#">Search</a>
+  </nav>
 
   <main>
     <!-- Trending Section -->
@@ -67,6 +143,19 @@
       <!-- Add more movie containers as needed -->
     </div>
   </main>
+
+  <!-- Social Icons -->
+  <div class="social-icons">
+    <a href="https://www.facebook.com/" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/1234567890" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://t.me/" class="social-icon" target="_blank"><i class="fab fa-telegram"></i></a>
+  </div>
+
+  <!-- Bottom Section -->
+  <div class="bottom-section">
+    <p class="bottom-text">© 2023 Movie Website. All rights reserved.</p>
+  </div>
 
 </body>
 </html>
