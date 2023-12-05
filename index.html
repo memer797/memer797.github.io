@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movieswhere</title>
+  <title>Movie Website</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
   <style>
     body {
       margin: 0;
@@ -14,31 +12,6 @@
       font-family: 'Arial', sans-serif;
       background-color: #111;
       color: #fff;
-    }
-
-    header {
-      background-color: #111;
-      padding: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header img {
-      width: 100px;
-      height: auto;
-    }
-
-    nav {
-      background-color: #222;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #fff;
-      margin: 0 15px;
     }
 
     main {
@@ -51,7 +24,12 @@
     .trending-section {
       overflow-x: auto;
       white-space: nowrap;
-      direction: ltr; /* Changed to left-to-right direction */
+      animation: scrollLeft 20s linear infinite; /* Added animation for scrolling */
+    }
+
+    @keyframes scrollLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
     }
 
     .movie-container {
@@ -68,6 +46,32 @@
     }
 
     .movie-name {
+      margin-top: 5px;
+      font-size: 14px;
+    }
+
+    /* New Section */
+    .new-section {
+      overflow-x: auto;
+      white-space: nowrap;
+      direction: ltr; /* Changed to left-to-right direction */
+      margin-top: 20px; /* Adjust spacing between sections */
+    }
+
+    .new-container {
+      display: inline-block;
+      margin-right: 15px; /* Adjust spacing between movies */
+      text-align: center;
+    }
+
+    .new-image {
+      width: 240px; /* Adjusted to 16:9 aspect ratio */
+      height: 135px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .new-name {
       margin-top: 5px;
       font-size: 14px;
     }
@@ -110,21 +114,6 @@
 </head>
 <body>
 
-  <header>
-    <img src="your-logo.png" alt="Movieswhere Logo">
-    <div class="login-container">
-      <button class="login-button">Login</button>
-    </div>
-  </header>
-
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Movies</a>
-    <a href="#">TV Shows</a>
-    <a href="#">Genres</a>
-    <a href="#">Search</a>
-  </nav>
-
   <main>
     <!-- Trending Section -->
     <div class="trending-section">
@@ -142,15 +131,32 @@
       </div>
       <!-- Add more movie containers as needed -->
     </div>
-  </main>
 
-  <!-- Social Icons -->
-  <div class="social-icons">
-    <a href="https://www.facebook.com/" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://wa.me/1234567890" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://t.me/" class="social-icon" target="_blank"><i class="fab fa-telegram"></i></a>
-  </div>
+    <!-- New Section -->
+    <div class="new-section">
+      <div class="new-container">
+        <img class="new-image" src="https://via.placeholder.com/240x135" alt="New Movie 1">
+        <div class="new-name">New Movie 1</div>
+      </div>
+      <div class="new-container">
+        <img class="new-image" src="https://via.placeholder.com/240x135" alt="New Movie 2">
+        <div class="new-name">New Movie 2</div>
+      </div>
+      <div class="new-container">
+        <img class="new-image" src="https://via.placeholder.com/240x135" alt="New Movie 3">
+        <div class="new-name">New Movie 3</div>
+      </div>
+      <!-- Add more movie containers as needed -->
+    </div>
+
+    <!-- Social Icons -->
+    <div class="social-icons">
+      <a href="https://www.facebook.com/" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/1234567890" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://t.me/" class="social-icon" target="_blank"><i class="fab fa-telegram"></i></a>
+    </div>
+  </main>
 
   <!-- Bottom Section -->
   <div class="bottom-section">
