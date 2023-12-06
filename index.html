@@ -3,16 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Website</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Movieswhere</title>
+  <!-- Add your logo link here -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Arial', sans-serif;
-      background-color: #f0f0f0; /* Light background color */
+      background-color: #111;
+      color: #fff;
     }
 
+    header {
+      background-color: #111;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header img {
+      width: 100px;
+      height: auto;
+    }
+
+    nav {
+      background-color: #222;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      margin: 0 15px;
+    }
+
+    /* Login Styles */
+    .login-container {
+      text-align: right;
+    }
+
+    .login-button {
+      background-color: #e50914;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #trending {
+      background-color: #f5f5f5;
+    }
+
+    .movie-container {
+      margin: 10px;
+      text-align: center;
+    }
+
+    .movie-image {
+      width: 200px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .movie-name {
+      margin-top: 5px;
+    }
+
+    /* New Section */
+    .new-section {
+      overflow-x: auto;
+      white-space: nowrap;
+      direction: ltr; /* Changed to left-to-right direction */
+    }
+
+    .new-section .movie-container {
+      display: inline-block;
+      margin-right: 15px; /* Adjust spacing between movies */
+      text-align: center;
+    }
+
+    .new-section .movie-image {
+      width: 240px; /* Adjusted to 16:9 aspect ratio */
+      height: 135px;
+    }
+
+    .new-section .movie-name {
+      margin-top: 5px;
+      font-size: 14px;
+    }
+
+    
+    
+    
     .footer {
       background-color: #333;
       color: #fff;
@@ -92,10 +182,69 @@
         margin: 0;
       }
     }
+    
+    
+    
+    
   </style>
 </head>
 <body>
 
+  <header>
+    <img src="your-logo.png" alt="Movieswhere Logo">
+    <div class="login-container">
+      <button class="login-button">Login</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Movies</a>
+    <a href="#">TV Shows</a>
+    <a href="#">Genres</a>
+    <a href="#">Search</a>
+  </nav>
+
+  <div id="trending">
+    <div class="movie-container">
+      <img class="movie-image" src="movie1.jpg" alt="Movie 1">
+      <div class="movie-name">Movie 1</div>
+    </div>
+    <div class="movie-container">
+      <img class="movie-image" src="movie2.jpg" alt="Movie 2">
+      <div class="movie-name">Movie 2</div>
+    </div>
+    <div class="movie-container">
+      <img class="movie-image" src="movie3.jpg" alt="Movie 3">
+      <div class="movie-name">Movie 3</div>
+    </div>
+    <div class="movie-container">
+      <img class="movie-image" src="movie4.jpg" alt="Movie 4">
+      <div class="movie-name">Movie 4</div>
+    </div>
+    <!-- Add more movie containers as needed -->
+  </div>
+
+  <main>
+    <!-- New Section -->
+    <div class="new-section">
+      <div class="movie-container">
+        <img class="movie-image" src="https://via.placeholder.com/240x135" alt="Movie 1">
+        <div class="movie-name">Movie 1</div>
+      </div>
+      <div class="movie-container">
+        <img class="movie-image" src="https://via.placeholder.com/240x135" alt="Movie 2">
+        <div class="movie-name">Movie 2</div>
+      </div>
+      <div class="movie-container">
+        <img class="movie-image" src="https://via.placeholder.com/240x135" alt="Movie 3">
+        <div class="movie-name">Movie 3</div>
+      </div>
+      <!-- Add more movie containers as needed -->
+    </div>
+  </main>
+
+  <!-- Social Icons -->
   <div class="footer">
     <div class="footer-content">
       <div class="footer-logo">
@@ -125,5 +274,23 @@
     </div>
   </div>
 
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <script>
+    // Initialize Slick slider
+    $(document).ready(function(){
+      $('#trending').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000, // Adjust the speed as needed
+        pauseOnHover: true
+      });
+    });
+  </script>
 </body>
 </html>
