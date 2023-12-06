@@ -113,11 +113,18 @@
   color: #fff;
   padding: 10px 0;
   text-align: center;
+  width: 100%;
   position: fixed;
   bottom: 0;
-  width: 100%;
 }
- 
+
+/* Add this media query for smaller screens, like Android devices */
+@media screen and (max-width: 767px) {
+  .footer {
+    position: relative;
+  }
+}
+
     .footer-content {
       display: flex;
       flex-wrap: wrap;
@@ -191,17 +198,6 @@
       }
     }
     /* Footer Section */
-.footer {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 0;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 100; /* Add a higher z-index to keep it on top of other elements */
-}
-
 .footer-copyright {
       flex-basis: 100%;
       margin-top: 10px;
