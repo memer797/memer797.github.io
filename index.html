@@ -80,27 +80,39 @@
     }
 
     /* New Section */
-    .new-section {
-      overflow-x: auto;
-      white-space: nowrap;
-      direction: ltr; /* Changed to left-to-right direction */
-    }
+.new-section {
+  overflow-x: auto;
+  white-space: nowrap;
+  direction: ltr; /* Changed to left-to-right direction */
+  text-align: center;
+  margin-top: 20px; /* Adjust the top margin as needed */
+}
 
-    .new-section .movie-container {
-      display: inline-block;
-      margin-right: 15px; /* Adjust spacing between movies */
-      text-align: center;
-    }
+.new-section .section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
-    .new-section .movie-image {
-      width: 240px; /* Adjusted to 16:9 aspect ratio */
-      height: 135px;
-    }
+.new-section .movie-container {
+  display: inline-block;
+  margin-right: 15px; /* Adjust spacing between movies */
+  text-align: center;
+  width: 299px; /* Set the width */
+}
 
-    .new-section .movie-name {
-      margin-top: 5px;
-      font-size: 14px;
-    }
+.new-section .movie-image {
+  width: 100%; /* Make the image fill the container */
+  height: 168px; /* Set the height */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.new-section .movie-name {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
 
     
     
@@ -248,23 +260,24 @@
   </div>
 
   <main>
-    <!-- New Section -->
-    <div class="new-section">
-      <div class="movie-container">
-        <img class="movie-image" src="https://via.placeholder.com/240x135" alt="Movie 1">
-        <div class="movie-name">Movie 1</div>
-      </div>
-      <div class="movie-container">
-        <img class="movie-image" src="https://via.placeholder.com/240x135" alt="Movie 2">
-        <div class="movie-name">Movie 2</div>
-      </div>
-      <div class="movie-container">
-        <img class="movie-image" src="https://via.placeholder.com/240x135" alt="Movie 3">
-        <div class="movie-name">Movie 3</div>
-      </div>
-      <!-- Add more movie containers as needed -->
+  <!-- New Section -->
+  <div class="new-section">
+    <div class="section-title">New Releases</div>
+    <div class="movie-container">
+      <img class="movie-image" src="https://via.placeholder.com/299x168" alt="Movie 1">
+      <div class="movie-name">Movie 1</div>
     </div>
-  </main>
+    <div class="movie-container">
+      <img class="movie-image" src="https://via.placeholder.com/299x168" alt="Movie 2">
+      <div class="movie-name">Movie 2</div>
+    </div>
+    <div class="movie-container">
+      <img class="movie-image" src="https://via.placeholder.com/299x168" alt="Movie 3">
+      <div class="movie-name">Movie 3</div>
+    </div>
+    <!-- Add more movie containers as needed -->
+  </div>
+</main>
 
   <!-- Social Icons -->
 <div class="footer">
