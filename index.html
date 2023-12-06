@@ -288,17 +288,18 @@
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
   <script>
-    // Initialize Slick slider
-    $(document).ready(function(){
-      $('#trending').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000, // Adjust the speed as needed
-        pauseOnHover: true
-      });
+  // Initialize Slick slider
+  $(document).ready(function(){
+    $('#trending').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000, // Adjust the speed as needed
+      pauseOnHover: true,
+      arrows: false // Set arrows to false to hide them
     });
+  });
   </script>
 </body>
 </html>
