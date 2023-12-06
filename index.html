@@ -3,90 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie Website</title>
+  <title>Your Website</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Arial', sans-serif;
-      background-color: #111;
+      background-color: #f0f0f0; /* Light background color */
+    }
+
+    .footer {
+      background-color: #333;
       color: #fff;
+      padding: 20px 0;
+      text-align: center;
     }
 
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .icons-container {
+    .footer-content {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
+      flex-wrap: wrap;
     }
 
-    .social-icons,
-    .copyright-icons {
+    .footer-logo {
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    .footer-logo img {
+      width: 100%;
+      max-width: 150px;
+    }
+
+    .footer-links {
+      flex: 2;
       display: flex;
       justify-content: center;
-      align-items: center;
-      margin-top: 20px;
+      flex-wrap: wrap;
     }
 
-    .social-icon,
-    .copyright-icon {
-      margin: 0 15px;
-      font-size: 24px;
+    .footer-links a {
       color: #fff;
       text-decoration: none;
-      transition: color 0.3s ease;
+      margin: 0 15px;
+      font-size: 14px;
     }
 
-    .social-icon:hover,
-    .copyright-icon:hover {
-      color: #e50914; /* Change color on hover */
+    .footer-social {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
     }
 
-    .bottom-section {
-      text-align: center;
-      padding: 40px 20px; /* Increased padding for a more pronounced effect */
-      background-color: #222;
-      position: relative;
-    }
-
-    .bottom-text {
-      margin: 0;
-      font-size: 16px;
+    .social-icon {
+      margin: 0 10px;
+      font-size: 18px;
       color: #fff;
+      text-decoration: none;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-logo,
+      .footer-links,
+      .footer-social {
+        width: 100%;
+        margin-bottom: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="icons-container">
-      <!-- Social Icons -->
-      <div class="social-icons">
-        <a href="https://www.facebook.com/" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/1234567890" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://t.me/" class="social-icon" target="_blank"><i class="fab fa-telegram"></i></a>
+  <div class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <!-- Add your logo here -->
+        <img src="your-logo.png" alt="Your Logo">
       </div>
 
-      <!-- Copyright Icons -->
-      <div class="copyright-icons">
-        <a href="#" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="#" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+
+      <div class="footer-social">
+        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
-  </div>
-
-  <!-- Bottom Section -->
-  <div class="bottom-section">
-    <p class="bottom-text">© 2023 Movie Website. All rights reserved.</p>
   </div>
 
 </body>
