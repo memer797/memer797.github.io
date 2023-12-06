@@ -24,6 +24,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin-top: 20px;
     }
 
     .social-icon {
@@ -40,14 +41,22 @@
 
     .bottom-section {
       text-align: center;
-      padding: 20px;
+      padding: 40px 20px; /* Increased padding for a more pronounced effect */
       background-color: #222;
+      position: relative;
     }
 
     .bottom-text {
       margin: 0;
-      font-size: 14px;
+      font-size: 16px;
       color: #fff;
+    }
+
+    .copyright-icons {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
     }
   </style>
 </head>
@@ -66,6 +75,11 @@
   <!-- Bottom Section -->
   <div class="bottom-section">
     <p class="bottom-text">© 2023 Movie Website. All rights reserved.</p>
+    <div class="copyright-icons">
+      <a href="#" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
   </div>
 
 </body>
