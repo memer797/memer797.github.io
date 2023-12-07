@@ -122,7 +122,7 @@
 
 .additional-content {
   flex-basis: calc(25% - 10px); /* Adjust the width of the additional content */
-  text-align: right; /* Align content to the right */
+  text-align: left; /* Align content to the right */
   padding: 10px; /* Add padding to the additional content */
 }
 
@@ -134,7 +134,14 @@
   color: #fff; /* Set the text color */
 }
 
-.see-all {
+.addition-content {
+  flex-basis: calc(25% - 10px); /* Adjust the width of the additional content */
+  text-align: right; /* Align content to the right */
+  padding: 10px; /* Add padding to the additional content */
+}
+
+
+/*.see-all {
   color: #fff;
   text-decoration: none;
   font-size: 14px;
@@ -145,7 +152,7 @@
   color: #e50914; /* Hover color */
 }
 
-    
+    */
     
     
     
@@ -285,6 +292,16 @@
   </div>
   
 <main>
+  
+    <div class="additional-content">
+    <!-- Your additional content here -->
+    <div class="section-title">New Releases</div>
+  </div>
+    <div class="addition-content">
+    <!-- Your additional content here -->
+    <a href="#" class="see-all">See All</a>    
+  </div>
+  
   <!-- New Section -->
   <div class="new-section">
   <div class="movies-container">
@@ -302,12 +319,7 @@
     </div>
     <!-- Add more movie containers as needed -->
   </div>
-  <div class="additional-content">
-    <!-- Your additional content here -->
-    <div class="section-title">New Releases</div>
-    <a href="#" class="see-all">See All</a>
-    <p>Your additional content goes here.</p>
-  </div>
+
   </div>
 </main>
 
