@@ -81,37 +81,39 @@
 
 /* New Section */
 .new-section {
-  overflow-x: auto;
-  white-space: nowrap;
-  direction: ltr; /* Changed to left-to-right direction */
-  text-align: left; /* Align the text to the left */
-  margin-top: 20px; /* Adjust the top margin as needed */
-  padding-left: 20px; /* Add padding to the left */
+  direction: ltr;
+  margin-top: 20px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100; /* Set a higher z-index value to keep it above the movies */
+  background-color: #111; /* Add a background color for better visibility */
 }
 
-.section-title {
+.new-section .section-title {
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 10px;
-  background-color: #e50914;
-  color: #fff; /* Set the text color */
+  color: #fff;
 }
 
 .new-section .movies-container {
-  display: inline-block;
-  margin-right: 15px; /* Adjust spacing between movies */
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto; /* Allow horizontal scrolling */
 }
 
 .new-section .movie-container {
-  display: inline-block;
-  margin-right: 15px; /* Adjust spacing between movies */
+  margin-right: 15px;
   text-align: center;
-  width: 299px; /* Set the width */
+  width: 299px;
 }
 
 .new-section .movie-image {
-  width: 100%; /* Make the image fill the container */
-  height: 168px; /* Set the height */
+  width: 100%;
+  height: 168px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -119,16 +121,13 @@
 .new-section .movie-name {
   margin-top: 5px;
   font-size: 14px;
-  color: #fff; /* Set the text color */
+  color: #fff;
 }
 
-.see-all {
-  font-size: 16px;
-  color: #e50914; /* Link color */
+.new-section .see-all {
+  color: #fff;
   text-decoration: none;
-  margin-bottom: 10px;
-  display: block;
-  align: right;
+  font-size: 16px;
 }
 
 
