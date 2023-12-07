@@ -81,11 +81,12 @@
 
 /* New Section */
 .new-section {
+  overflow-x: auto;
+  white-space: nowrap;
   direction: ltr; /* Changed to left-to-right direction */
   margin-top: 20px; /* Adjust the top margin as needed */
   padding: 0 20px; /* Add padding to both sides */
   display: flex;
-  flex-wrap: nowrap; /* Ensure items stay in a single line */
 }
 
 .new-section .section-title {
@@ -96,11 +97,13 @@
 }
 
 .new-section .movies-container {
-  display: flex;
-  flex-wrap: nowrap; /* Ensure items stay in a single line */
+  display: inline-block;
+  white-space: nowrap; /* Keep movies in a single line */
+  overflow-x: auto; /* Enable horizontal scrolling */
 }
 
 .new-section .movie-container {
+  display: inline-block;
   margin-right: 15px; /* Adjust spacing between movies */
   text-align: center;
   width: 299px; /* Set the width */
