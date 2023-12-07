@@ -89,13 +89,16 @@
     }
 
     .search-input {
-      padding: 15px;
-      font-size: 16px;
-      border: none;
-      border-radius: 25px;
-      outline: none;
-      width: 80vw; /* Adjusted width for better responsiveness */
-    }
+  flex-grow: 1;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  width: 100%; /* Full width for the input */
+  box-sizing: border-box; /* Include padding and border in the total width and height */
+}
+
 
     .search-button {
       padding: 15px 20px;
