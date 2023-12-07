@@ -79,6 +79,37 @@
       margin-top: 5px;
     }
 
+
+
+    .leftright-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+.left-side {
+      flex: 1;
+    }
+
+    .right-side {
+      flex: 1;
+      text-align: right;
+    }
+    
+.see-all {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.see-all:hover {
+  color: #e50914; /* Hover color */
+}
+
+
+    
 /* New Section */
 .new-section {
   overflow-x: auto;
@@ -90,12 +121,12 @@
 }
 
 .new-section .section-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #fff; /* Set the text color */
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      color: #fff; /* Set the text color */
 }
-
 .new-section .movies-container {
   display: inline-block;
   margin-right: 15px; /* Adjust spacing between movies */
@@ -275,9 +306,18 @@
 
 
 <main>
+  
+  <div class="leftright-container">
+  <div class="left-side">
+      <div class="section-title">New Releases</div>
+  </div>
+  <div class="right-side">
+    <a href="#" class="see-all">See All</a>
+  </div>
+</div>
+  
   <!-- New Section -->
   <div class="new-section">
-    <div class="section-title">New Releases</div>
     <div class="movies-container">
       <div class="movie-container">
         <img class="movie-image" src="https://via.placeholder.com/299x168" alt="Movie 1">
