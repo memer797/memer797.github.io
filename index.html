@@ -76,79 +76,63 @@
 
 
     .movie-name {
-      margin-top: 8px;
+      margin-top: 5px;
     }
 
-
-
-
-    
-
+/* New Section */
 .new-section {
   overflow-x: auto;
   white-space: nowrap;
   direction: ltr; /* Changed to left-to-right direction */
+  text-align: left; /* Align the text to the left */
   margin-top: 20px; /* Adjust the top margin as needed */
-  padding: 0 20px; /* Add padding to both sides */
-  display: flex;
-  justify-content: space-between; /* Add space between the movies and additional content */
+  padding-left: 20px; /* Add padding to the left */
 }
 
-.movies-container {
+.new-section .section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff; /* Set the text color */
+}
+
+.new-section .movies-container {
   display: inline-block;
-  white-space: nowrap; /* Keep movies in a single line */
-  overflow-x: auto; /* Enable horizontal scrolling */
+  margin-right: 15px; /* Adjust spacing between movies */
 }
 
-.movie-container {
+.new-section .movie-container {
   display: inline-block;
   margin-right: 15px; /* Adjust spacing between movies */
   text-align: center;
   width: 299px; /* Set the width */
 }
 
-.movie-image {
+.new-section .movie-image {
   width: 100%; /* Make the image fill the container */
   height: 168px; /* Set the height */
   object-fit: cover;
   border-radius: 10px;
 }
 
-.movie-name {
+.new-section .movie-name {
   margin-top: 5px;
   font-size: 14px;
   color: #fff; /* Set the text color */
 }
 
-.additional-content {
-  flex-basis: calc(25% - 10px); /* Adjust the width of the additional content */
-  text-align: left; /* Align content to the right */
-  padding: 10px; /* Add padding to the additional content */
-}
-
-.section-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  color: #fff; /* Set the text color */
-}
-
-
-
-
-/*.see-all {
-  color: #fff;
+.new-section .see-all {
+  font-size: 16px;
+  color: #e50914; /* Link color */
   text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s ease;
+  margin-bottom: 10px;
+  display: block;
 }
 
-.see-all:hover {
-  color: #e50914; /* Hover color */
-}
 
-    */
+
+    
+    
     
     
     
@@ -286,38 +270,32 @@
     </div>
     <!-- Add more movie containers as needed -->
   </div>
-  
+
+
+
+
 <main>
-  
-    <div class="additional-content">
-    <!-- Your additional content here -->
-    <div class="section-title">New Releases</div>
-  </div>
-    <div class="addition-content">
-    <!-- Your additional content here -->
-    <a href="#" class="see-all">See All</a>    
-  </div>
-  
   <!-- New Section -->
   <div class="new-section">
-  <div class="movies-container">
-    <div class="movie-container">
-      <img class="movie-image" src="https://via.placeholder.com/299x168" alt="Movie 1">
-      <div class="movie-name">Movie 1</div>
+    <div class="section-title">New Releases</div>
+    <div class="movies-container">
+      <div class="movie-container">
+        <img class="movie-image" src="https://via.placeholder.com/299x168" alt="Movie 1">
+        <div class="movie-name">Movie 1</div>
+      </div>
+      <div class="movie-container">
+        <img class="movie-image" src="https://via.placeholder.com/299x168" alt="Movie 2">
+        <div class="movie-name">Movie 2</div>
+      </div>
+      <div class="movie-container">
+        <img class="movie-image" src="https://via.placeholder.com/299x168" alt="Movie 3">
+        <div class="movie-name">Movie 3</div>
+      </div>
+      <!-- Add more movie containers as needed -->
     </div>
-    <div class="movie-container">
-      <img class="movie-image" src="https://via.placeholder.com/299x168" alt="Movie 2">
-      <div class="movie-name">Movie 2</div>
-    </div>
-    <div class="movie-container">
-      <img class="movie-image" src="https://via.placeholder.com/299x168" alt="Movie 3">
-      <div class="movie-name">Movie 3</div>
-    </div>
-    <!-- Add more movie containers as needed -->
-  </div>
-
   </div>
 </main>
+
 
 
 
