@@ -273,13 +273,11 @@
       margin-bottom: 10px;
     }
 
-    .social-icon {
-      margin: 0 10px;
-      font-size: 18px;
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+    .search-icon {
+  font-size: 20px;
+  margin: 15px 10px 15px 15px; /* Adjusted margins for spacing */
+  color: #4285f4;
+}
 
     .social-icon:hover {
       color: #e50914; /* Hover color */
@@ -331,10 +329,11 @@
 
 
 <div class="search-container">
-    <i class="fas fa-search search-icon"></i>
-    <input type="text" class="search-input" id="searchInput" placeholder="Search...">
-    <button class="search-button" onclick="performSearch()">Search</button>
+  <i class="fas fa-search search-icon"></i>
+  <input type="text" class="search-input" id="searchInput" placeholder="Search...">
+  <button class="search-button" onclick="performSearch()">Search</button>
 </div>
+
   <script>
     function performSearch() {
       // Get the value from the search input
