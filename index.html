@@ -74,53 +74,33 @@
   border-radius: 10px;
 }
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
 .search-container {
+  margin-top: 10px; /* Adjust the top margin as needed */
+  margin-bottom: 10px; /* Add padding to the left */
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Set to space between */
-  background-color: #fff;
-  border-radius: 25px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  width: 80%; /* Set a width for better readability */
-  max-width: 400px;
-  margin: 0 auto;
+  justify-content: center; /* Added to center horizontally */
 }
-
 
     .search-input {
-  flex-grow: 1;
-  padding: 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 25px;
-  outline: none;
-  width: 90%; /* Full width for the input */
-  box-sizing: border-box; /* Include padding and border in the total width and height */
-}
-
-
-    .search-button {
-      padding: 15px 20px;
-      background-color: #4285f4;
-      color: #fff;
-      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid #ddd;
       border-radius: 25px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-left: auto; /* Align to the right */
+      outline: none;
+      transition: border-color 0.3s ease;
+      flex: 1;
     }
 
-    .search-button:hover {
-      background-color: #2a5db0;
+    .search-input:focus {
+      border-color: #4285f4;
     }
 
     .search-icon {
       font-size: 20px;
-      margin-right: 10px;
       color: #4285f4;
+      margin-left: 10px; /* Adjusted margin to place it on the right */
+      cursor: pointer;
     }
 
     
@@ -273,11 +253,13 @@
       margin-bottom: 10px;
     }
 
-    .search-icon {
-  font-size: 20px;
-  margin: 15px 10px 15px 15px; /* Adjusted margins for spacing */
-  color: #4285f4;
-}
+    .social-icon {
+      margin: 0 10px;
+      font-size: 18px;
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
     .social-icon:hover {
       color: #e50914; /* Hover color */
@@ -328,21 +310,24 @@
 
 
 
-<div class="search-container">
-  <i class="fas fa-search search-icon"></i>
-  <input type="text" class="search-input" id="searchInput" placeholder="Search...">
-  <button class="search-button" onclick="performSearch()">Search</button>
-</div>
+  <div class="search-container">
+    <input type="text" class="search-input" id="searchInput" placeholder="Search...">
+    <i class="fas fa-search search-icon" onclick="performSearch()"></i>
+  </div>
+  
+    <script>
+    document.getElementById('searchInput').addEventListener('focus', function() {
+      this.placeholder = '';
+    });
 
-  <script>
+    document.getElementById('searchInput').addEventListener('blur', function() {
+      this.placeholder = 'Search...';
+    });
+
     function performSearch() {
-      // Get the value from the search input
       var searchTerm = document.getElementById('searchInput').value;
-
-      // For demonstration purposes, you can log the search term to the console
       console.log('Search term:', searchTerm);
-
-      // You can add additional logic here, such as redirecting to a search results page
+      // Add your search functionality here
     }
   </script>
 
