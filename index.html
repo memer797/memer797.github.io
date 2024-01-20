@@ -4,9 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Comment Section</title>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <style>
-        /* ... (styles from the previous example) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        #comments-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .comment {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+
+        .comment:last-child {
+            border-bottom: none;
+        }
+
+        .comment strong {
+            color: #333;
+        }
+
+        #comment-form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        #comment-form h2 {
+            color: #333;
+        }
+
+        #comment-form label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        #comment-form select,
+        #comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        #comment-form button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #comment-form button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -16,42 +86,88 @@
 
     <div id="comment-form">
         <h2>Add a Comment</h2>
-        <div id="g-signin2" data-onsuccess="onSignIn"></div>
         <form id="add-comment-form">
+            <label for="username">Select Gmail Address:</label>
+            <select id="username" required></select>
+
             <label for="comment">Comment:</label>
             <textarea id="comment" required></textarea>
+
             <button type="submit">Submit Comment</button>
         </form>
     </div>
 
     <script>
-        function onSignIn(googleUser) {
-            const profile = googleUser.getBasicProfile();
-            window.username = profile.getName(); // Store the username globally
-        }
-
         document.addEventListener('DOMContentLoaded', function () {
             const commentForm = document.getElementById('add-comment-form');
             const commentsContainer = document.getElementById('comments-container');
+            const usernameSelect = document.getElementById('username');
 
-            commentForm.addEventListener('submit', function (event) {
-                event.preventDefault();
+            // Load Google API client library
+            gapi.load('client:auth2', initGoogleSignIn);
 
-                const commentText = document.getElementById('comment').value;
+            function initGoogleSignIn() {
+                gapi.client.init({
+                    apiKey: 'YOUR_API_KEY',
+                    clientId: 'YOUR_CLIENT_ID',
+                    discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest"],
+                    scope: 'https://www.googleapis.com/auth/gmail.readonly'
+                }).then(function () {
+                    // Listen for sign-in state changes
+                    gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
 
-                if (commentText && window.username) {
-                    const commentElement = document.createElement('div');
-                    commentElement.classList.add('comment');
-                    commentElement.innerHTML = `<p><strong>${window.username}:</strong> ${commentText}</p>`;
-                    commentsContainer.appendChild(commentElement);
+                    // Handle initial sign-in state
+                    updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
 
-                    // Clear the form after submitting
-                    commentForm.reset();
+                    // Add event listener to the sign-in button
+                    commentForm.addEventListener('submit', function (event) {
+                        event.preventDefault();
+
+                        const selectedUsername = usernameSelect.value;
+                        const commentText = document.getElementById('comment').value;
+
+                        if (selectedUsername && commentText) {
+                            const commentElement = document.createElement('div');
+                            commentElement.classList.add('comment');
+                            commentElement.innerHTML = `<p><strong>${selectedUsername}:</strong> ${commentText}</p>`;
+                            commentsContainer.appendChild(commentElement);
+
+                            // Clear the form after submitting
+                            commentForm.reset();
+                        }
+                    });
+                });
+            }
+
+            function updateSignInStatus(isSignedIn) {
+                if (isSignedIn) {
+                    loadUserEmails();
                 } else {
-                    alert('Please sign in and enter a comment.');
+                    // Handle not signed in
                 }
-            });
+            }
+
+            function loadUserEmails() {
+                gapi.client.gmail.users.getProfile({
+                    userId: 'me'
+                }).then(function (response) {
+                    const emails = response.result.emails;
+                    updateUsernameDropdown(emails);
+                });
+            }
+
+            function updateUsernameDropdown(emails) {
+                const select = document.getElementById('username');
+
+                emails.forEach(function (email) {
+                    const option = document.createElement('option');
+                    option.value = email.emailAddress;
+                    option.text = email.emailAddress;
+                    select.add(option);
+                });
+            }
         });
     </script>
+    <script src="https://apis.google.com/js/api.js"></script>
 </body>
 </html>
