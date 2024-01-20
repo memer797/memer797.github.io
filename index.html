@@ -3,101 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guestbook</title>
+    <title>Professional Comment Section</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        h2 {
-            color: #333;
-        }
-
-        form {
-            max-width: 400px;
-            margin: 20px auto;
-        }
-
-        label, input, textarea, button {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
-            padding: 10px;
-            border: none;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        .comments {
-            margin-top: 20px;
-        }
-
-        .comment {
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            background-color: #f9f9f9;
-        }
+        /* ... (styles from the previous example) */
     </style>
 </head>
 <body>
+    <div id="comments-container">
+        <!-- Existing comments will be displayed here -->
+    </div>
 
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST["email"];
-    $comment = $_POST["comment"];
+    <div id="comment-form">
+        <h2>Add a Comment</h2>
+        <div id="g-signin2" data-onsuccess="onSignIn"></div>
+        <form id="add-comment-form">
+            <label for="comment">Comment:</label>
+            <textarea id="comment" required></textarea>
+            <button type="submit">Submit Comment</button>
+        </form>
+    </div>
 
-    // You can add additional validation here
+    <script>
+        function onSignIn(googleUser) {
+            const profile = googleUser.getBasicProfile();
+            window.username = profile.getName(); // Store the username globally
+        }
 
-    // Save the comment to a file (or database in a real-world scenario)
-    $data = ["email" => $email, "comment" => $comment];
-    $comments = json_decode(file_get_contents("comments.json"), true);
-    $comments[] = $data;
-    file_put_contents("comments.json", json_encode($comments));
+        document.addEventListener('DOMContentLoaded', function () {
+            const commentForm = document.getElementById('add-comment-form');
+            const commentsContainer = document.getElementById('comments-container');
 
-    echo "<p>Comment submitted successfully!</p>";
-}
-?>
+            commentForm.addEventListener('submit', function (event) {
+                event.preventDefault();
 
-<h2>Guestbook</h2>
+                const commentText = document.getElementById('comment').value;
 
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+                if (commentText && window.username) {
+                    const commentElement = document.createElement('div');
+                    commentElement.classList.add('comment');
+                    commentElement.innerHTML = `<p><strong>${window.username}:</strong> ${commentText}</p>`;
+                    commentsContainer.appendChild(commentElement);
 
-    <label for="comment">Comment:</label>
-    <textarea id="comment" name="comment" rows="4" required></textarea>
-
-    <button type="submit">Submit Comment</button>
-</form>
-
-<h2>Comments</h2>
-<div class="comments">
-    <?php
-    $comments = json_decode(file_get_contents("comments.json"), true);
-
-    foreach ($comments as $comment) {
-        echo '<div class="comment">';
-        echo '<p><strong>Email:</strong> ' . $comment["email"] . '</p>';
-        echo '<p><strong>Comment:</strong> ' . $comment["comment"] . '</p>';
-        echo '</div>';
-    }
-    ?>
-</div>
-
+                    // Clear the form after submitting
+                    commentForm.reset();
+                } else {
+                    alert('Please sign in and enter a comment.');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
