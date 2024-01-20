@@ -1,60 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dark/Light Mode Toggle</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial', sans-serif;
-      transition: background-color 0.5s ease; /* Smooth transition for background color change */
-    }
-
-    .toggle-container {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-    }
-
-    .toggle-btn {
-      background-color: #4CAF50;
-      color: #fff;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 5px;
-      outline: none;
-      transition: background-color 0.3s ease; /* Smooth transition for button color change */
-    }
-
-    .toggle-btn:hover {
-      background-color: #45a049; /* Darker shade on hover */
-    }
-
-    /* Dark mode styles */
-    body.dark-mode {
-      background-color: #222;
-      color: #fff;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page - Comments</title>
 </head>
 <body>
 
-  <div class="toggle-container">
-    <button class="toggle-btn" onclick="toggleMode()">Toggle Mode</button>
-  </div>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["email"];
+    $comment = $_POST["comment"];
 
-  <h1>Your Website Content</h1>
-  <p>This is an example content on your website.</p>
+    // You can add additional validation here
 
-  <script>
-    function toggleMode() {
-      const body = document.body;
-      body.classList.toggle('dark-mode');
-    }
-  </script>
+    // Save the comment to a file (or database in a real-world scenario)
+    $data = ["email" => $email, "comment" => $comment];
+    $comments = json_decode(file_get_contents("comments.json"), true);
+    $comments[] = $data;
+    file_put_contents("comments.json", json_encode($comments));
+
+    echo "<p>Comment submitted successfully!</p>";
+}
+?>
+
+<h2>User Page - Leave a Comment</h2>
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="comment">Comment:</label>
+    <textarea id="comment" name="comment" rows="4" required></textarea>
+
+    <button type="submit">Submit</button>
+</form>
 
 </body>
 </html>
